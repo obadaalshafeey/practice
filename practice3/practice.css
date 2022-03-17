@@ -1,0 +1,21 @@
+body{
+    background-image: url(../practice2/img/og-default-image.jpeg);
+background-repeat: no-repeat;
+
+
+}
+img{
+border-radius: 50%;
+
+
+}
+body{
+padding-left: 10%;
+
+}
+
+img:hover{
+display: none;
+
+}
+
