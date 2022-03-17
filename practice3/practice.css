@@ -15,7 +15,6 @@ padding-left: 10%;
 }
 
 img:hover{
-display: none;
-
+opacity: 0;
 }
 
