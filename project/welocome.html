@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./pro.css">
+    <title>Welcome to OTA Quiz </title>
+    <link rel="icon" href="/masterMinds_OTA/img/icologo.ico">
+
+    <style>
+        /* /////////////////////////////////////navbar//////////////////////////////////////// */
+        * {
+            margin: 0px;
+        }
+
+
+        .burger {
+            display: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            padding-right: 30px;
+            align-items: center;
+            background-color: #525;
+            height: 50px;
+        }
+
+        .nav .logo {
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: 5px;
+            width: 150px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #525;
+        }
+
+
+        .nav .items {
+            align-items: center;
+            flex-direction: line;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav .item {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #525;
+            transition: all .3s ease;
+        }
+
+        .nav .item:hover {
+            background-color: #636;
+            transition: all .3s ease;
+        }
+
+
+        .item a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        @media (max-width: 600px) {
+            .nav .items {
+                transform: translateX(100%);
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                right: 0px;
+                height: 70px;
+                width: 100px;
+                transition: all .3s ease;
+            }
+
+            .items .item {
+                width: 100%;
+                height: 100%;
+            }
+
+            .burger {
+                display: block;
+            }
+
+        }
+
+        #menu_btn {
+            font-family: 'Raleway', sans-serif;
+
+        }
+
+
+        @media (min-width: 600px) {
+            .nav .items {
+                transform: translateX(0%) !important;
+
+            }
+
+
+        }
+
+        /* ///////////////////////////////////////////content/////////////////////////////////////////// */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            color: black;
+            font-family: 'Raleway', sans-serif;
+
+
+        }
+
+        .h1 {
+            font-size: 7vw;
+
+        }
+
+        .h3 {
+            font-size: 2.3vw;
+            padding-left: 70px;
+            padding-right: 70px;
+
+        }
+
+
+        .front {
+            height: 50px;
+            width: 200px;
+            text-align: center;
+            background-color: rgba(20, 20, 20, 0.5);
+            border: none;
+            color: black;
+            font-size: 18px;
+            margin-top: 40px;
+            border-radius: 5px;
+            position: absolute;
+            top: 60%;
+            left: 37%;
+
+        }
+
+        .front:hover {
+            background-color: rgba(104, 103, 103, 0.5);
+        }
+
+
+        .start {
+
+
+            height: 50px;
+            width: 125px;
+            background-color: #525;
+            border: none;
+            color: black;
+            font-size: 18px;
+            margin-top: 40px;
+            border-radius: 5px;
+            position: absolute;
+            top: 60%;
+            left: 52%;
+
+
+        }
+
+        .start a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .start:hover {
+            background-color: #636;
+        }
+
+        /* ////////////////////////////////////Footer////////////////////////////////// */
+        .footer {
+            height: 50px;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            display: flex;
+            justify-content: space-between;
+            background-color: #525;
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            left: 0;
+        }
+
+
+        footer .pf {
+            padding-left: 20px;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ////////////////////////////////////// Nav Bar //////////////////////////// -->
+    <!-- <nav id="navv" class=" navv">
+        <div>
+
+
+        <button id="bt1" class="bt">
+        <a href=""> Home </a>
+        </button>
+
+        <button id="bt2" class="bt">
+            <a href=""> About us </a>
+        </button>
+      </div> -->
+
+
+    <!-- <nav class="nav">
+        <div class='logo'>
+          OTA
+        </div>
+        <ul id="menu" class="items">
+          <li class="item"><a href="#">Home</a></li>
+          <li class="item"><a href="#">About</a></li>  
+        </ul>
+        <span id="menu_btn" class="material-icons burger">Menu</apan>
+      </nav>
+       -->
+
+    <nav class="nav">
+        <div class='logo'>
+            OTA
+        </div>
+        <ul id="menu" class="items">
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">About</a></li>
+        </ul>
+        <span id="menu_btn" class="material-icons burger">Menu</apan>
+    </nav>
+
+    <!-- </nav> -->
+    <!-- /////////////////////////// Main /////////////////////////// -->
+    <main id="main" class="main">
+
+        <div id="content" class="content">
+            <h1 id="h1" class="h1"> Welcome <span>Dear</span></h1>
+            <h3 id="h3" class="h3"> Quiz Website helps you to learn <br>
+                the most popular Front-end languages<br>
+                on the web in an easy and fast way.</h3>
+
+            <form id="optionform" class="optionform">
+
+                <select name="front-end" id="front" class="front">
+                    <option value="" disabled selected>Select your Language</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript"> Javascript </option>
+
+                </select>
+                <br><br>
+                <button type="button" id="start" class="start">Start Quiz </button>
+
+<a href="">  </a>
+            </form>
+        </div>
+
+    </main>
+    <!-- ////////////////////////////// Footer ///////////////////////// -->
+    <footer>
+        <div id="footer" class="footer">
+            <P id="pf" class="pf"> All Copyright @ Reserved </P>
+            <P id="ota" class="ota"> Desgined by OTA, 2022 </P>
+
+        </div>
+    </footer>
+
+</body>
+<script>
+    const menu_btn = document.querySelector("#menu_btn");
+    const menu = document.querySelector("#menu");
+    menu_btn.addEventListener('click', () => {
+        if (menu.style.transform == "translateX(100%)") {
+            menu.style.transform = "translateX(0%)";
+        } else {
+            menu.style.transform = "translateX(100%)"
+        }
+    });
+
+
+    const start_btn = document.getElementById("start");
+
+    start_btn.onclick = ()=>{
+
+//         if (front.value == "html") {
+//               window.location="../pages/quiz.html"    
+//                 }
+//         else if (front.value == "css") {
+//             window.location="../pages/quiz.html" 
+// }
+// else  (front.value == "javascript") 
+//             window.location="../pages/quiz.html" 
+
+window.location="./quize.html" 
+}
+    
+
+</script>
+
+</html>

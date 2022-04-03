@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+*{
+	box-sizing: border-box;
+}
+
+body, h1{
+  background-color:#00b5cc;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+	font-family: "Poppins", sans-serif;
+	margin:0;
+  min-height:100vh;
+}
+
+.quiz-container{
+  background-color:#fff;
+  border-radius:10px;
+  box-shadow:0 0 10px 2px rgba(100,100,100,100.1);
+  width:600px;
+  max-width:100%;
+}
+
+.quiz-header{
+  padding:2rem;
+}
+
+h2{
+  margin:0;
+}
+
+
+ul{
+  list-style-type:none;
+  padding:0;
+}
+
+ul li{
+  font-size: 1.2rem;
+   margin:1rem 0;
+}
+
+ul li label{
+  cursor:pointer;
+}
+
+button {
+  background-color:#ffa502;
+  border:none;
+  color:white;
+  cursor:pointer;
+  display:block;
+  font-family:inherit;
+  font-size:1.3rem;
+  width:100%;
+  padding:1.3rem;
+}
+
+button:hover{
+  background-color:#ff6348;
+}
+    </style>
+</head>
+<body>
+    
+<div class="quiz-container" id="quiz">
+    <div class="quiz-header">
+      <h2 id="question">Question text</h2>
+        <ul>
+          <li><input type="radio" id="a" name="answer" class="answer"><label for="a" id="a_text">Question</label></li>
+          <li><input type="radio" id="b" name="answer" class="answer"><label for="b" id="b_text">Question</label></li>
+          <li><input type="radio" id="c" name="answer" class="answer"><label for="c" id="c_text">Question</label></li>
+          <li><input type="radio" id="d" name="answer" class="answer"><label for="d" id="d_text">Question</label></li>
+        </ul>
+    </div> 
+    
+    <button id="submit">next</button>
+    
+  </div>
+</body>
+<script>
+
+const quizData= [ 
+  {
+    question: 'how old is everything?',
+    a: '10',
+    b: '20',
+    c: '30',
+    d: '40',
+    correct: 'b',
+  },
+  {
+    question: 'whats the most used programming?',
+    a: 'java',
+    b: 'C',
+    c: 'python',
+    d: 'JavaScript',
+    correct: 'a',
+  },
+  {
+    question: 'whos the president of US?',
+    a: 'trump',
+    b: 'Obama',
+    c: 'tongo',
+    d: 'Biden',
+    correct: 'd',
+  },{
+    question: 'what does html stands for?',
+    a: 'hypertext markup language',
+    b: 'hype mom laughin',
+    c: 'jason object notation',
+    d: 'Application programming interface',
+    correct: 'a'
+  },{
+    question: 'what year was javascript launch?',
+    a: '2010',
+    b: '2020',
+    c: '1995',
+    d: '1090',
+    correct: 'c',
+  },
+  
+];
+
+const quiz = document.getElementById("quiz");
+const answerEls = document.querySelectorAll(".answer");
+const questionEl = document.getElementById("question");
+const a_text =  document.getElementById("a_text");
+const b_text =  document.getElementById("b_text");
+const c_text =  document.getElementById("c_text");
+const d_text =  document.getElementById("d_text");
+const submitBtn = document.getElementById("submit");
+
+let currentQuiz = 0;
+let score = 0;
+
+loadQuiz();
+
+function loadQuiz(){
+  deselectAnswers();
+  
+  const currentQuizData = quizData[currentQuiz];
+  
+  questionEl.innerText  = currentQuizData.question;
+  a_text.innerText = currentQuizData.a;
+  b_text.innerText = currentQuizData.b;
+  c_text.innerText = currentQuizData.c;
+  d_text.innerText = currentQuizData.d;
+}
+
+function getSelected(){
+  let answer = undefined;
+  
+  answerEls.forEach((answerEl) => {
+    if(answerEl.checked){
+        answer = answerEl.id;
+    }  
+  });
+ return answer; 
+}
+
+function deselectAnswers(){
+  answerEls.forEach((answerEl)=>{
+    answerEl.checked = true;
+  });
+}
+
+submitBtn.addEventListener ('click', () =>{
+  //check to see the answer
+  const answer = getSelected();
+  
+  if(answer){
+      if(answer === quizData[currentQuiz].correct){
+        score++;
+      }
+    
+      currentQuiz++;
+      if(currentQuiz < quizData.length){
+        loadQuiz();
+      }else{
+        quiz.innerHTML = `
+        <h2>You have answered correctly at ${score}/${quizData.length} questions. </h2>
+        <button onclick="location.reload()">Reload</button>
+        `;
+     }
+  }
+});
+ 
+</script>
+</html>

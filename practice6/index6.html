@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container{
+display: grid;
+grid-template-columns: repeat(4,auto);
+grid-template-rows: repeat(1,auto);
+gap: 5px;
+}
+.container div{
+
+    background-color: rgb(43, 226, 52);
+}
+
+.d1{
+    margin:10px;
+    margin-top: 20%;
+border: 1px solid blueviolet;
+width: 50%;
+font-size: 30px;
+
+}
+.d2{
+    margin: 10px;
+    margin-top: 20%;
+border: 1px solid blueviolet;
+width: 50%;
+font-size: 30px;
+position: relative;
+right: 50%;
+}
+.d3{
+margin-top: 12%;
+    border: 1px solid blueviolet;
+width: 50%;
+font-size: 30px;
+position: relative;
+right: 88%;
+bottom: 10px;
+}
+.d4{
+
+
+
+    margin-top: 2%;
+    border: 1px solid blueviolet;
+width: 50%;
+font-size: 30px;
+position: relative;
+right: 122%;
+bottom: 10px;
+}
+
+@media screen and (max-width:800px) {
+    .container{
+
+        display: block;
+    }
+    .container div{
+background-color: blue;
+position: static;
+margin: 0px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .container{
+
+        display: block;
+    }
+    .container div{
+background-color: rgb(182, 129, 50);
+position: static;
+margin: 0px;
+    }
+}
+@media screen and (max-width:300px) {
+    .container{
+
+        display: block;
+    }
+    .container div{
+background-color: rgb(199, 63, 188);
+position: static;
+margin: 0px;
+    }
+}
+@media screen and (max-width:900) {
+    .container{
+
+        display: block;
+    }
+    .container div{
+background-color: rgb(46, 150, 107);
+position: static;
+margin: 0px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+<div class="container">
+
+<div class="d1">im abox!</div>
+<div class="d2">Me too !</div>
+<div class="d3">our styles are <br>mobile-first</div>
+<div class="d4">We changed at <br> 320px,800px and <br>1024px!</div>
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
